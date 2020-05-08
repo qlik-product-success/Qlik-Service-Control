@@ -1,18 +1,17 @@
-# New Generic Repository
+ Qlik Sense Services control through Powershell
 
-This is a repo templates that providesds the basic files and config whwn creating a new project. 
+This project contains serveral scripts to STOP, START and RESTART Qlik Sense services in correct order through native powershell and automatically trigger Administrative Privileges.
 
-## Setup repository 
 
-* Most repositoryies should be public, provate is also usful for internal projects
-* Configure notificaitons so that pull requests are notified to the right sub set of people
-* Invite maintainers group
+## References 
+Qlik Sense Support<br/>
+https://support.qlik.com/articles/000010331
 
-## Pull request
 
-* Good practice to enforce code review
-* Configure Branch protection rule for master branch1. 
+Run Powershell Scripts with Admin Privileges<br/>
+https://www.petri.com/run-powershell-scripts-with-administrative-privileges
+
 
 ## License
 
-This project is provided "AS IS", without any warranty, under the MIT License - see the (LICENSE)[LICENSE] file for details
+This project is provided "AS IS", without any warranty, under the MIT License - see the [LICENSE](LICENSE) file for details
