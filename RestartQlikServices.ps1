@@ -48,13 +48,14 @@ if ((Check-Admin) -eq $false) {
 }
 
 # Stop Qlik Sense Services
-Get-Service QlikSenseRepositoryDatabase | Stop-Service -Force
-Get-Service QlikLoggingService | Stop-Service
+Get-Service "Qlik*" | Where-Object {($_.Name -eq "QlikSenseRepositoryDatabase")} | Stop-Service -Force
+Get-Service "Qlik*" | Where-Object {($_.Name -eq "QlikLoggingService")} | Stop-Service
 Get-Service QlikSenseServiceDispatcher | Stop-Service
+Get-Service "Qlik*" | Stop-Service -Force
 
 # Start Qlik Sense Services
-Get-Service QlikSenseRepositoryDatabase | Start-Service
-Get-Service QlikLoggingService | Start-Service
+Get-Service "Qlik*" | Where-Object {($_.Name -eq "QlikSenseRepositoryDatabase")} | Start-Service
+Get-Service "Qlik*" | Where-Object {($_.Name -eq "QlikLoggingService")} | Start-Service
 Get-Service QlikSenseServiceDispatcher | Start-Service
 Get-Service QlikSenseRepositoryService | Start-Service
 Get-Service "Qlik*" | Start-Service
