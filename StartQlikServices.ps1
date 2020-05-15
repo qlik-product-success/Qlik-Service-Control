@@ -53,3 +53,6 @@ Get-Service "Qlik*" | Where-Object {($_.Name -eq "QlikLoggingService")} | Start-
 Get-Service QlikSenseServiceDispatcher | Start-Service
 Get-Service QlikSenseRepositoryService | Start-Service
 Get-Service "Qlik*" | Start-Service
+
+# Display Qlik Sense Services Status
+Get-Service "Qlik*" | ft -auto

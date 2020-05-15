@@ -52,3 +52,6 @@ Get-Service "Qlik*" | Where-Object {($_.Name -eq "QlikSenseRepositoryDatabase")}
 Get-Service "Qlik*" | Where-Object {($_.Name -eq "QlikLoggingService")} | Stop-Service
 Get-Service QlikSenseServiceDispatcher | Stop-Service
 Get-Service "Qlik*" | Stop-Service -Force
+
+# Display Qlik Sense Services Status
+Get-Service "Qlik*" | ft -auto

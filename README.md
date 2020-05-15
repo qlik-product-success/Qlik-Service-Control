@@ -1,4 +1,4 @@
- Qlik Sense Services control through Powershell
+# Qlik Sense Repository Service (QRS) API through Powershell
 
 This project contains serveral scripts to STOP, START and RESTART Qlik Sense services in correct order through native powershell and automatically trigger Administrative Privileges.
 
