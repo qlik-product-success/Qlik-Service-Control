@@ -1,8 +1,10 @@
-# Start / Stop / Restart: Qlik Sense Enterprise on Windows
+# Start / Stop / Restart: Qlik Services on Windows Server
 
-This project contains PowerShell scripts to STOP, START and RESTART Qlik Sense services. The servcie status changes are executed in the required order as descriebd in accurate order as referred in [Qlik Support Knowledge: Manual Start and Stop order of Qlik Sense services](https://community.qlik.com/t5/Qlik-Support-Knowledge-Base/Manual-Start-and-Stop-order-of-Qlik-Sense-services/ta-p/1713773)
+This project contains PowerShell scripts to STOP, START and RESTART Windows services for Qlik in Windows Server environments. 
 
-Changing Windows service state in PowerShell requires the terminal to Run As Administrator. The script attmept to self-elevate the termninal if required. 
+Changing Windows service state in PowerShell requires the terminal to Run As Administrator. The scripts attmept to self-elevate the termninal if required, to make this adminstrative task as easy as possible. 
+
+## Qlik Sense Enterprise
 
 ### Stop all Qlik Sense Services
 
@@ -34,6 +36,7 @@ Restart script invokes stop and start scripts, to the optiosn are similar to STO
     ``` 
     PS> .\Restart-QlikSense.ps1 -IncludeRepositoryDatabase
     ```
+
 
 ## License
 
