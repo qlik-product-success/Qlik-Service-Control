@@ -56,6 +56,10 @@ function Stop-QlikSense {
         $QlikSenseServices | Where-Object { $_.Name -notlike "QlikSenseRepositoryDatabase" } | Stop-Service -Force 
     }    
 
+    # TBA: Check that services are stopped
+    #      Kill processes if still running
+    #      Re-iterate stop service. 
+
     if(-not $Quiet) {
         Show-QlikSenseServices -ComputerName $ComputerName
     }
