@@ -44,13 +44,46 @@ The module provides a set of commands for viewing, (re)starting and stopping ser
 
 ## Installation
 
-If you have PowerShell 5.x you can install the module from NuGet using the following command.
+If you have PowerShell 5.x you can install the module from NuGet using the following command. Note, you may need to enable TLS1.2 for NuGet to be successful. 
 
 ```
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+```
+```
 Get-PackageProvider -Name NuGet -ForceBootstrap
+```
+```
 Install-Module -Name QlikServiceControl
 ```
-Otherwise, the module can be installed by downloading and extracting the files to C:\Program Files\WindowsPowerShell\Modules\Qlik-QlikServiceControl, the module will then be loaded the next time you open a PowerShell console. You can also load the module for the current session using the Import-Module command and providing the name or path to the module.
+Alternatively, the module can be installed by downloading and extracting the files to C:\Program Files\WindowsPowerShell\Modules\Qlik-Service-Control, the module will then be loaded the next time you open a PowerShell console. 
+
+1. Run PowerShell terminal as Administrator
+1. Download module from GitHub to user's Downloads folder
+    ``` powershell
+    Invoke-WebRequest -URI "https://github.com/qlikcustomersuccess/Qlik-Service-Control/archive/master.zip" `
+                      -OutFile "$env:HOMEDRIVE$env:HOMEPATH\Downloads\Qlik-Service-Control.zip"
+    ```
+1. Unblock downloaded ZIP file
+    ``` powershell
+    Unblock-File -Path "$env:HOMEDRIVE$env:HOMEPATH\Downloads\Qlik-Service-Control.zip"
+    ```    
+1. Unzip module files
+    ``` powershell
+    Expand-Archive -Path "$env:HOMEDRIVE$env:HOMEPATH\Downloads\Qlik-Service-Control.zip" `
+                   -DestinationPath "$env:HOMEDRIVE$env:HOMEPATH\Downloads\"
+    ```
+1. Create new folder in PowerShell module's folder. 
+    ```
+    New-Item -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Qlik-Service-Control" -ItemType Directory
+    ```
+1. Copy files from Downloads to Module path
+    ```
+    Copy-Item -Path "$env:HOMEDRIVE$env:HOMEPATH\Downloads\Qlik-Service-Control-master\" `
+              -Destination "$env:ProgramFiles\WindowsPowerShell\Modules\Qlik-Service-Control"  `
+              -Recurse
+    ```
+
+You can also load the module for the current session using the Import-Module command and providing the name or path to the module.
 
 ```
 Import-Module QlikServiceControl
@@ -58,6 +91,7 @@ Import-Module QlikServiceControl
 ```
 Import-Module .\QlikServiceControl.psd1
 ```
+
 ## License
 
 This project is provided "AS IS", without any warranty, under the MIT License - see the [LICENSE](LICENSE) file for details
