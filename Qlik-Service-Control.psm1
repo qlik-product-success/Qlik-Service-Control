@@ -6,7 +6,7 @@ function Show-QlikServices {
     )
 
     $ComputerName | ForEach-Object { `
-        Get-Service "Qlik*" -ComputerName $_ `
+        Get-Service "Qlik*" -ComputerName $_ | `
         Select-Object @{Name='ComputerName';Expression={$_.MachineName}}, DisplayName, Status, Starttype `
     }
 }
