@@ -1,56 +1,81 @@
-# Control Windows srvcies for Qlik products
+# Control Windows services for Qlik products
 
-This PowerShell module simplifies control of Windows services for Qlik Sense Enterprise on Windows. It can start, stop and restart services in the correct order, and allows doing so on both local and remote servers. 
+## About
+Qlik Service Control is a PowerShell module that simplifies control of Windows services for Qlik products. It provide a set of simple commands that enable checking current state of services and changing the state by start/stop/restart commands.
 
-## Install module 
+## Usage and examples
+
+The module provides a set of commands for viewing, (re)starting and stopping services on local or remote servers. See the linked sub-pages for more details on each command.
+
+* [Show-QlikServices](./docs/Show-QlikServices.md)
+* [Show-QlikAlertingServices](./docs/Show-QlikAlertingServices.md)
+* [Show-QlikNPrintingServices](./docs/Show-QlikNPrintingServices.md)
+* [Show-QlikSenseServices](./docs/Show-QlikSenseServices.md)
+* [Show-QlikViewServices](./docs/Show-QlikViewServices.md)
+
+* [Start-QlikSense](./docs/Start-QlikSense.md)
+
+* [Stop-QlikSense](./docs/Stop-QlikSense.md)
+
+* [Restart-QlikSense](./docs/Restart-QlikSense.md)
+
+<!--- 
+* [Start-QlikAlertingServices](./docs/Start-QlikAlertingServices.md)
+* [Start-QlikNPrintingServices](./docs/Start-QlikNPrintingServices.md)
+* [Start-QlikViewServices](./docs/Start-QlikViewServices.md)
+
+* [Stop-QlikAlertingServices](./docs/Stop-QlikAlertingServices.md)
+* [Stop-QlikNPrintingServices](./docs/Stop-QlikNPrintingServices.md)
+* [Stop-QlikViewServices](./docs/Stop-QlikViewServices.md)
+
+* [Restart-QlikAlertingServices](./docs/Restart-QlikAlertingServices.md)
+* [Restart-QlikNPrintingServices](./docs/Restart-QlikNPrintingServices.md)
+* [Restart-QlikViewServices](./docs/Restart-QlikViewServices.md)
+//-->
+
+## Installation
+
+### Clone GitHub project
 
 1. Run PowerShell as Administrator <br />
-    `Start-Process powershell -Verb runAs`
+    ``` powershell
+    Start-Process powershell -Verb runAs
+    ```
 1. Change location to PowerShell modules <br />
-    `Set-Location $Env:ProgramFiles\WindowsPowerShell\Modules`
-1. Clone repository <br />
-    `git clone https://github.com/qlikcustomersuccess/Qlik-Windows-Service-Control`
-1. Import PowerShell module <br />
-    `Import-Module .\Qlik-Windows-Service-Control\Qlik-Windows-Service-Control.psd1`
+    ``` powershell
+    Set-Location "$Env:ProgramFiles\WindowsPowerShell\Modules"
+    ```
+1. Clone repository from GitHub 
+    ``` powershell
+    git clone https://github.com/qlikcustomersuccess/Qlik-Windows-Service-Control
+    ```
+1. Import moduel to use it in the same Powershell session
+    ``` powershell
+    Import-Module .\Qlik-Windows-Service-Control\Qlik-Windows-Service-Control.psd1
+    ```
 
-## Update Module
+### Download GitHub repository as Zip file
 
 1. Run PowerShell as Administrator <br />
-    `Start-Process powershell -Verb runAs`
+    ``` powershell
+    Start-Process powershell -Verb runAs
+    ```
 1. Change location to PowerShell modules <br />
-    `Set-Location $Env:ProgramFiles\WindowsPowerShell\Modules\Qlik-Windows-Service-Control`
-1. Pull latest version of repository<br />
-    `git pull`
-1. Remove module from current PowerShell session<br />
-    `Remove-Module Qlik-Windows-Service-Control`
-1. Import PowerShell module <br />
-    `Import-Module .\Qlik-Windows-Service-Control.psd1`
-
-## Qlik Sense Enterprise on Windows
-
-### Show services
-
-``` Powershell
-PS C:\> Show-QlikSenseServices -ComputerName qlikserver1.domain.local
-```
-
-### Start services
-
-``` Powershell
-PS C:\> Start-QlikSense -ComputerName qlikserver1.domain.local
-```
-
-### Stop services
-
-``` Powershell
-PS C:\> Stop-QlikSense -ComputerName qlikserver1.domain.local
-```
-
-### Restart services
-
-``` Powershell
-PS C:\> Restart-QlikSense -ComputerName qlikserver1.domain.local
-```
+    ``` powershell
+    Set-Location "$Env:ProgramFiles\WindowsPowerShell\Modules"
+    ```
+1. Download repository as ZIP from GitHub 
+    ``` powershell
+    Invoke-WebRequest -uri "https://github.com/qlikcustomersuccess/Qlik-Service-Control/archive/master.zip" -OutFile ".\Qlik-Service-Control.zip"
+    ```
+1. Expand ZIP file into module subfolder
+    ``` powershell
+    Expand-Archive -Path ".\Qlik-Service-Control.zip"
+    ```
+1. Import moduel to use it in the same Powershell session
+    ``` powershell
+    Import-Module .\Qlik-Service-Control\Qlik-Service-Control-master\Qlik-Windows-Service-Control.psd1
+    ```
 
 ## License
 

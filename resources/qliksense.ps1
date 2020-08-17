@@ -2,11 +2,13 @@ function Show-QlikSenseServices {
 
     [CmdletBinding(PositionalBinding=$false)]
     param(        
-    [string]$ComputerName="localhost"
+        [string[]]$ComputerName="localhost"
     )
 
-    Get-Service "Qlik*" -ComputerName $ComputerName| Where-Object { ($_.Name -like "QlikSense*" -or $_.Name -eq "QlikLoggingService") } | `
-    Select-Object @{Name='ComputerName';Expression={$_.MachineName}}, DisplayName, Status, Starttype
+    $ComputerName | ForEach-Object { `
+        Get-Service "Qlik*" -ComputerName $_ | Where-Object { ($_.Name -like "QlikSense*" -or $_.Name -eq "QlikLoggingService") } | `
+        Select-Object @{Name='ComputerName';Expression={$_.MachineName}}, DisplayName, Status, Starttype `
+    }
 }
 
 function Start-QlikSense {
