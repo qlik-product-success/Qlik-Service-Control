@@ -56,11 +56,11 @@ The module provides a set of commands for viewing, (re)starting and stopping ser
     ```
 1. Clone repository from GitHub 
     ``` powershell
-    git clone https://github.com/qlikcustomersuccess/Qlik-Windows-Service-Control
+    git clone https://github.com/qlikcustomersuccess/Qlik-Service-Control
     ```
 1. Import moduel to use it in the same Powershell session
     ``` powershell
-    Import-Module .\Qlik-Windows-Service-Control\Qlik-Windows-Service-Control.psd1
+    Import-Module .\Qlik-Windows-Service-Control\Qlik-Service-Control.psd1
     ```
 
 ### Download GitHub repository as Zip file
