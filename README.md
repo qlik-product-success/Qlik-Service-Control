@@ -7,19 +7,28 @@ Qlik Service Control is a PowerShell module that simplifies control of Windows s
 
 The module provides a set of commands for viewing, (re)starting and stopping services on local or remote servers. See the linked sub-pages for more details on each command.
 
+### Any product
+
 * [Show-QlikServices](./docs/Show-QlikServices.md)
-* [Show-QlikAlertingServices](./docs/Show-QlikAlertingServices.md)
-* [Show-QlikNPrintingServices](./docs/Show-QlikNPrintingServices.md)
+
+### Qlik Sense Enterprise on Windows
+
 * [Show-QlikSenseServices](./docs/Show-QlikSenseServices.md)
-* [Show-QlikViewServices](./docs/Show-QlikViewServices.md)
-
 * [Start-QlikSense](./docs/Start-QlikSense.md)
-
 * [Stop-QlikSense](./docs/Stop-QlikSense.md)
-
 * [Restart-QlikSense](./docs/Restart-QlikSense.md)
 
+### Qlik Alerting 
+* [Show-QlikAlertingServices](./docs/Show-QlikAlertingServices.md)
+
+### Qlik NPrinting
+* [Show-QlikNPrintingServices](./docs/Show-QlikNPrintingServices.md)
+
 <!--- 
+### QlikView Server / Publisher
+* [Show-QlikViewServices](./docs/Show-QlikViewServices.md)
+
+
 * [Start-QlikAlertingServices](./docs/Start-QlikAlertingServices.md)
 * [Start-QlikNPrintingServices](./docs/Start-QlikNPrintingServices.md)
 * [Start-QlikViewServices](./docs/Start-QlikViewServices.md)
