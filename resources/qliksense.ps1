@@ -7,7 +7,8 @@ function Show-QlikSenseServices {
 
     $ComputerName | ForEach-Object { `
         Get-Service "Qlik*" -ComputerName $_ | Where-Object { ($_.Name -like "QlikSense*" -or $_.Name -eq "QlikLoggingService") } | `
-        Select-Object @{Name='ComputerName';Expression={$_.MachineName}}, DisplayName, Status, Starttype `
+        Select-Object @{Name='ComputerName';Expression={$_.MachineName}}, DisplayName, Status, Starttype | `
+        Format-Table * -AutoSize `
     }
 }
 

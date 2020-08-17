@@ -7,6 +7,7 @@ function Show-QlikAlertingServices {
 
     $ComputerName | ForEach-Object { `
         Get-Service "QlikAlerting*" -ComputerName $_ | `
-        Select-Object @{Name='ComputerName';Expression={$_.MachineName}}, DisplayName, Status, Starttype `
+        Select-Object @{Name='ComputerName';Expression={$_.MachineName}}, DisplayName, Status, Starttype | `
+        Format-Table * -AutoSize `
     }
 }

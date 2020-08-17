@@ -4,9 +4,12 @@ function Show-QlikServices {
     param(        
         [string[]]$ComputerName="localhost"
     )
-
-    $ComputerName | ForEach-Object { `
+    
+    $ComputerName 
+    
+    "su-apac02.qliktech.com" | ForEach-Object { `
         Get-Service "Qlik*" -ComputerName $_ | `
-        Select-Object @{Name='ComputerName';Expression={$_.MachineName}}, DisplayName, Status, Starttype `
+        Select-Object @{Name='ComputerName';Expression={$_.MachineName}}, DisplayName, Status, Starttype | `
+        Format-Table * -AutoSize `
     }
 }

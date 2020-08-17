@@ -7,6 +7,7 @@ function Show-QlikNPrintingServices {
 
     $ComputerName | ForEach-Object { `
         Get-Service "*nprinting*" -ComputerName $_ | `
-        Select-Object @{Name='ComputerName';Expression={$_.MachineName}}, DisplayName, Status, Starttype `
+        Select-Object @{Name='ComputerName';Expression={$_.MachineName}}, DisplayName, Status, Starttype | `
+        Format-Table * -AutoSize `
     }
 }
