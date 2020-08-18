@@ -22,7 +22,8 @@ function Start-QlikSense {
         [Switch] $Quiet=$false
     )
 
-    # Get Qlik Sense related Services
+    # Get enabeld Qlik Sense related Services and start in required order
+    # Including Repository Database, which must be started first if enabled
     $QlikSenseServices = Get-Service "Qlik*" -ComputerName $ComputerName | Where-Object { ($_.Name -like "QlikSense*" -or $_.Name -eq "QlikLoggingService") } 
     $EnabledServices   = $QlikSenseServices | Where-Object { $_.StartType -ne "Disabled" }
 
@@ -48,16 +49,14 @@ function Stop-QlikSense {
         [Switch] $Quiet=$false
     )
 
-    # Get all Qlik Sense services
-    $QlikSenseServices = Get-Service "Qlik*" -ComputerName $ComputerName | Where-Object { ($_.Name -like "QlikSense*" -or $_.Name -eq "QlikLoggingService") } 
+    # Get all Qlik Sense services, except Qlik Sense Repository database 
+    # Databse assuem to always remain running
+    $QlikSenseServices = Get-Service "Qlik*" -ComputerName $ComputerName | `
+                         Where-Object { (       $_.Name -like "QlikSense*" -or $_.Name -eq "QlikLoggingService") `
+                                          -and ($_.Name -notlike "QlikSenseRepositoryDatabase") } 
 
     # Stop all found services
-    # Only stop QRD if requested
-    if( $StopRepositoryDatabase)  { 
-        $QlikSenseServices | Stop-Service -Force 
-    }else{
-        $QlikSenseServices | Where-Object { $_.Name -notlike "QlikSenseRepositoryDatabase" } | Stop-Service -Force 
-    }    
+    $QlikSenseServices | Stop-Service -Force 
 
     # TBA: Check that services are stopped
     #      Kill processes if still running
