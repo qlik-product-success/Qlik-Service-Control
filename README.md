@@ -20,6 +20,9 @@ The module provides a set of commands for viewing, (re)starting and stopping ser
 
 ### Qlik Alerting 
 * [Show-QlikAlertingServices](./docs/Show-QlikAlertingServices.md)
+* [Start-QlikAlertingServices](./docs/Start-QlikAlertingServices.md)
+* [Stop-QlikAlertingServices](./docs/Stop-QlikAlertingServices.md)
+* [Restart-QlikAlertingServices](./docs/Restart-QlikAlertingServices.md)
 
 ### Qlik NPrinting
 * [Show-QlikNPrintingServices](./docs/Show-QlikNPrintingServices.md)
@@ -32,13 +35,9 @@ The module provides a set of commands for viewing, (re)starting and stopping ser
 * [Show-QlikViewServices](./docs/Show-QlikViewServices.md)
 
 
-* [Start-QlikAlertingServices](./docs/Start-QlikAlertingServices.md)
 * [Start-QlikViewServices](./docs/Start-QlikViewServices.md)
-
-* [Stop-QlikAlertingServices](./docs/Stop-QlikAlertingServices.md)
 * [Stop-QlikViewServices](./docs/Stop-QlikViewServices.md)
 
-* [Restart-QlikAlertingServices](./docs/Restart-QlikAlertingServices.md)
 * [Restart-QlikViewServices](./docs/Restart-QlikViewServices.md)
 //-->
 
