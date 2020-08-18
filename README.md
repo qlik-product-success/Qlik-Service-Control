@@ -30,16 +30,11 @@ The module provides a set of commands for viewing, (re)starting and stopping ser
 * [Stop-QlikNPrintingServices](./docs/Stop-QlikNPrintingServices.md)
 * [Restart-QlikNPrintingServices](./docs/Restart-QlikNPrintingServices.md)
 
-<!--- 
 ### QlikView Server / Publisher
 * [Show-QlikViewServices](./docs/Show-QlikViewServices.md)
-
-
 * [Start-QlikViewServices](./docs/Start-QlikViewServices.md)
 * [Stop-QlikViewServices](./docs/Stop-QlikViewServices.md)
-
 * [Restart-QlikViewServices](./docs/Restart-QlikViewServices.md)
-//-->
 
 ## Installation
 
