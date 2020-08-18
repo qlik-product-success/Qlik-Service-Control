@@ -23,6 +23,9 @@ The module provides a set of commands for viewing, (re)starting and stopping ser
 
 ### Qlik NPrinting
 * [Show-QlikNPrintingServices](./docs/Show-QlikNPrintingServices.md)
+* [Start-QlikNPrintingServices](./docs/Start-QlikNPrintingServices.md)
+* [Stop-QlikNPrintingServices](./docs/Stop-QlikNPrintingServices.md)
+* [Restart-QlikNPrintingServices](./docs/Restart-QlikNPrintingServices.md)
 
 <!--- 
 ### QlikView Server / Publisher
@@ -30,15 +33,12 @@ The module provides a set of commands for viewing, (re)starting and stopping ser
 
 
 * [Start-QlikAlertingServices](./docs/Start-QlikAlertingServices.md)
-* [Start-QlikNPrintingServices](./docs/Start-QlikNPrintingServices.md)
 * [Start-QlikViewServices](./docs/Start-QlikViewServices.md)
 
 * [Stop-QlikAlertingServices](./docs/Stop-QlikAlertingServices.md)
-* [Stop-QlikNPrintingServices](./docs/Stop-QlikNPrintingServices.md)
 * [Stop-QlikViewServices](./docs/Stop-QlikViewServices.md)
 
 * [Restart-QlikAlertingServices](./docs/Restart-QlikAlertingServices.md)
-* [Restart-QlikNPrintingServices](./docs/Restart-QlikNPrintingServices.md)
 * [Restart-QlikViewServices](./docs/Restart-QlikViewServices.md)
 //-->
 
@@ -73,11 +73,11 @@ Alternatively, the module can be installed by downloading and extracting the fil
                    -DestinationPath "$env:HOMEDRIVE$env:HOMEPATH\Downloads\"
     ```
 1. Create new folder in PowerShell module's folder. 
-    ```
+    ``` powershell
     New-Item -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Qlik-Service-Control" -ItemType Directory
     ```
 1. Copy files from Downloads to Module path
-    ```
+    ``` powershell
     Copy-Item -Path "$env:HOMEDRIVE$env:HOMEPATH\Downloads\Qlik-Service-Control-master\" `
               -Destination "$env:ProgramFiles\WindowsPowerShell\Modules\Qlik-Service-Control"  `
               -Recurse
@@ -91,6 +91,18 @@ Import-Module QlikServiceControl
 ```
 Import-Module .\QlikServiceControl.psd1
 ```
+
+## Limitations
+
+### Database services
+
+Database are assume to be resilient services which should remains running. 
+Database services are not stopped when prodcut is stopped. 
+
+### PowerShell 5.x
+
+Current implementation relies on remote host access via `-ComputerName` parameter in `*-Service` method calls. 
+This parameter is depreceated in PowerShell 6+, so this module cuyrrnelty only works in PowerShell 5.x
 
 ## License
 
