@@ -7,6 +7,8 @@ Qlik Service Control is a PowerShell module that simplifies control of Windows s
 
 The module provides a set of commands for viewing, (re)starting and stopping services on local or remote servers. See the linked sub-pages for more details on each command.
 
+> Current release requires PowerShell 5. Use `$PSVersionTable.PSVersion.Major` in PowerShell terminal to check version.
+
 ### Any product
 
 * [Show-QlikServices](./docs/Show-QlikServices.md)
@@ -20,21 +22,21 @@ The module provides a set of commands for viewing, (re)starting and stopping ser
 
 ### Qlik Alerting 
 * [Show-QlikAlertingServices](./docs/Show-QlikAlertingServices.md)
-* [Start-QlikAlertingServices](./docs/Start-QlikAlertingServices.md)
-* [Stop-QlikAlertingServices](./docs/Stop-QlikAlertingServices.md)
-* [Restart-QlikAlertingServices](./docs/Restart-QlikAlertingServices.md)
+* [Start-QlikAlerting](./docs/Start-QlikAlerting.md)
+* [Stop-QlikAlerting](./docs/Stop-QlikAlerting.md)
+* [Restart-QlikAlerting](./docs/Restart-QlikAlerting.md)
 
 ### Qlik NPrinting
 * [Show-QlikNPrintingServices](./docs/Show-QlikNPrintingServices.md)
-* [Start-QlikNPrintingServices](./docs/Start-QlikNPrintingServices.md)
-* [Stop-QlikNPrintingServices](./docs/Stop-QlikNPrintingServices.md)
-* [Restart-QlikNPrintingServices](./docs/Restart-QlikNPrintingServices.md)
+* [Start-QlikNPrinting](./docs/Start-QlikNPrintingServices.md)
+* [Stop-QlikNPrinting](./docs/Stop-QlikNPrintingServices.md)
+* [Restart-QlikNPrinting](./docs/Restart-QlikNPrintingServices.md)
 
 ### QlikView Server / Publisher
 * [Show-QlikViewServices](./docs/Show-QlikViewServices.md)
-* [Start-QlikViewServices](./docs/Start-QlikViewServices.md)
-* [Stop-QlikViewServices](./docs/Stop-QlikViewServices.md)
-* [Restart-QlikViewServices](./docs/Restart-QlikViewServices.md)
+* [Start-QlikView](./docs/Start-QlikView.md)
+* [Stop-QlikView](./docs/Stop-QlikView.md)
+* [Restart-QlikView](./docs/Restart-QlikView.md)
 
 ## Installation
 
