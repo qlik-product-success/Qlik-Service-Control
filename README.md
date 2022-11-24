@@ -98,7 +98,7 @@ Database services are not stopped when prodcut is stopped.
 ### PowerShell 5.x
 
 Current implementation relies on remote host access via `-ComputerName` parameter in `*-Service` method calls. 
-This parameter is depreceated in PowerShell 6+, so this module cuyrrnelty only works in PowerShell 5.x
+This parameter is depreceated in PowerShell 6+, so this module currently only works in PowerShell 5.x
 
 ## License
 
